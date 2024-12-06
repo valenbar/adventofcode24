@@ -3,12 +3,12 @@
 use std::fs;
 use eyre::Result;
 
-static RESULT1_DEMO: isize = 0;
-static RESULT1_REAL: isize = 0;
-static RESULT2_DEMO: isize = 0;
-static RESULT2_REAL: isize = 0;
+static RESULT1_DEMO: usize = 0;
+static RESULT1_REAL: usize = 0;
+static RESULT2_DEMO: usize = 0;
+static RESULT2_REAL: usize = 0;
 
-fn solve_task_1(input: &str) -> Result<isize> {
+fn solve_task_1(input: &str) -> Result<usize> {
     let input = fs::read_to_string(input)?;
 
     // SOLVE TASK 1
@@ -18,7 +18,7 @@ fn solve_task_1(input: &str) -> Result<isize> {
     Ok(result)
 }
 
-fn solve_task_2(input: &str) -> Result<isize> {
+fn solve_task_2(input: &str) -> Result<usize> {
     let input = fs::read_to_string(input)?;
 
     // SOLVE TASK 2
@@ -36,27 +36,27 @@ fn main() {
 #[test]
 fn test_task_1_demo() -> Result<()> {
     let result = solve_task_1("input_demo.txt")?;
-    assert_eq!(result as isize, RESULT1_DEMO);
+    assert_eq!(result, RESULT1_DEMO);
     Ok(())
 }
 
 #[test]
 fn test_task_1_real() -> Result<()> {
     let result = solve_task_1("input.txt")?;
-    assert_eq!(result as isize, RESULT1_REAL);
+    assert_eq!(result, RESULT1_REAL);
     Ok(())
 }
 
 #[test]
 fn test_task_2_demo() -> Result<()> {
     let result = solve_task_2("input_demo.txt")?;
-    assert_eq!(result as isize, RESULT2_DEMO);
+    assert_eq!(result, RESULT2_DEMO);
     Ok(())
 }
 
 #[test]
 fn test_task_2_real() -> Result<()> {
     let result = solve_task_2("input.txt")?;
-    assert_eq!(result as isize, RESULT2_REAL);
+    assert_eq!(result, RESULT2_REAL);
     Ok(())
 }
